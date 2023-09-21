@@ -55,6 +55,7 @@ public class OrderService : IOrderService
         var order = new Order(basket.BuyerId, shippingAddress, items);
 
         #region ServiceBus communication
+        //Only for demo purposes!
         //Would be a better way to store it as an enviroment variable.
         //await using var client = new ServiceBusClient(Environment.GetEnvironmentVariable("SERVICE_BUS_CONNECTION_STRING"));
         await using var client = new ServiceBusClient(WarehouseConnections.SERVICE_BUS_CONNECTION_STRING);
